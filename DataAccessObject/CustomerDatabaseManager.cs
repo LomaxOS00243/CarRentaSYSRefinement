@@ -9,24 +9,24 @@ using Oracle.ManagedDataAccess.Client;
 
 namespace CarRentaSYS.DataAccessObject
 {
-    internal class CustomerRepository
+    internal class CustomerDatabaseManager
     {
-        private static CustomerRepository _clientRepository;
+        private static CustomerDatabaseManager _clientRepository;
         private readonly string _connectionString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
         private readonly OracleConnection _databaseConnection;
 
-        private CustomerRepository() 
+        private CustomerDatabaseManager() 
         {
             _databaseConnection = new OracleConnection(_connectionString);
         }
 
-        public static CustomerRepository ClientRepositoryInstance()
+        public static CustomerDatabaseManager ClientRepositoryInstance()
         {
             
 
             if (_clientRepository == null)
             {
-                 _clientRepository = new CustomerRepository();
+                 _clientRepository = new CustomerDatabaseManager();
             }
             return _clientRepository;
    

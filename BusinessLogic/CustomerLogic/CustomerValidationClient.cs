@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRentaSYS.BusinessLogic
+namespace CarRentaSYS.BusinessLogic.CustomerLogic
 {
     internal class CustomerValidationClient
     {

@@ -100,12 +100,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\CustomerController.cs" />
-    <Compile Include="BusinessLogic\CustomerIDValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerValidationClient.cs" />
-    <Compile Include="BusinessLogic\ICustomerValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerAddressValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerControllerManager.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerCountryValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerEmailValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerIDValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerNameValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerTelnoValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerTownValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerValidationClient.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerZipcodeValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\ICustomerValidationStrategy.cs" />
     <Compile Include="Clients.cs" />
-    <Compile Include="DataAccessObject\CustomerRepository.cs" />
+    <Compile Include="DataAccessObject\CustomerDatabaseManager.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

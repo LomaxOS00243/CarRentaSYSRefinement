@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRentaSYS.BusinessLogic
+namespace CarRentaSYS.BusinessLogic.CustomerLogic
 {
-    internal class CustomerIDValidator : ICustomerValidationStrategy
+    internal class CustomerTelnoValidator : ICustomerValidationStrategy
     {
         public bool Validate(TextBox input)
         {
             if (input.Text.Equals(""))
             {
 
-                MessageBox.Show("Client ID Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("The telphone number address must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 input.Focus();
                 return true;

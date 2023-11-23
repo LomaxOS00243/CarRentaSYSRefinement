@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRentaSYS.BusinessLogic
+namespace CarRentaSYS.BusinessLogic.CustomerLogic
 {
-    internal class CustomerController
+    internal class CustomerControllerManager
     {
         private int customerId;
         private String name;
@@ -22,7 +22,7 @@ namespace CarRentaSYS.BusinessLogic
 
         //private CustomerRepository _customerRep = CustomerRepository.ClientRepositoryInstance();
 
-        public CustomerController()
+        public CustomerControllerManager()
         { 
             this.customerId = 0;
             this.name = " ";
@@ -36,7 +36,7 @@ namespace CarRentaSYS.BusinessLogic
         }
 
 
-        public CustomerController(int customerId, string name, string address, string town, string country, string zipCode, string email, string telNo, char status)
+        public CustomerControllerManager(int customerId, string name, string address, string town, string country, string zipCode, string email, string telNo, char status)
         {
             this.customerId = customerId;
             this.name = name;
@@ -114,7 +114,7 @@ namespace CarRentaSYS.BusinessLogic
         }
         public static int GetNextID()
         {
-            CustomerRepository _customerRepistory = CustomerRepository.ClientRepositoryInstance();
+            CustomerDatabaseManager _customerRepistory = CustomerDatabaseManager.ClientRepositoryInstance();
             int _id = _customerRepistory.NextClientId();
 
             return _id;

@@ -1,4 +1,4 @@
-﻿using CarRentaSYS.BusinessLogic;
+﻿using CarRentaSYS.BusinessLogic.CustomerLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ namespace CarRentaSYS
 {
     public partial class frmAddClient : Form
     {
-        CustomerController customerController;
+        CustomerControllerManager customerController;
 
         public frmAddClient()
         {
@@ -25,58 +25,7 @@ namespace CarRentaSYS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //validate all the input data
-            
-            if (clientNmeTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Name Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientNmeTxt.Focus();
-                return;
-            }
-            else if (clientAddTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Address Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientAddTxt.Focus();
-                return;
-            }
-            else if (clientTownTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Town Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientTownTxt.Focus();
-                return;
-            }
-            else if (clientConTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Country Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientConTxt.Focus();
-                return;
-            }
-           
-            else if (clientZipTxt.Text.Equals(""))
-            {
-                MessageBox.Show(" Zipcode Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientZipTxt.Focus();
-                return;
-            }
-            else if (clientEmailTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Email Address Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientEmailTxt.Focus();
-                return;
-            }
-            else if (clientTelTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Telephone Number Must Be Entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                clientTelTxt.Focus();
-                return;
-            }
+           //validator method calls
             
 
             //Create an instance of Product and instantiate with values from controls
@@ -118,7 +67,7 @@ namespace CarRentaSYS
         private void frmAddClient_Load(object sender, EventArgs e)
         {
 
-            clientIdTxt.Text = CustomerController.GetNextID().ToString("0000");
+            clientIdTxt.Text = CustomerControllerManager.GetNextID().ToString("0000");
         }
 
 

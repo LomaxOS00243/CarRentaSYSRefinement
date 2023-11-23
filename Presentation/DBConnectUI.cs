@@ -9,7 +9,7 @@ namespace CarRentaSYS.Presentation
     public partial class DBConnectUI : Form
     {
 
-        readonly CustomerRepository _customerRep = CustomerRepository.ClientRepositoryInstance();
+        readonly CustomerDatabaseManager _customerRep = CustomerDatabaseManager.ClientRepositoryInstance();
         
         public DBConnectUI()
         {
