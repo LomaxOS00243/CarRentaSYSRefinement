@@ -13,18 +13,19 @@ namespace CarRentaSYS.DataAccessObject
     internal class CustomerDatabaseManager : ICustomerDatabase
     {
         private static CustomerDatabaseManager customerCustomer;
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
         private readonly OracleConnection databaseConnection;
+        private readonly string connectionString = ConfigurationManager.ConnectionStrings["connect"].ConnectionString;
+        
 
         private CustomerDatabaseManager() 
         {
             databaseConnection = new OracleConnection(connectionString);
         }
 
+        //Singelton Patten: Unique instance creator
         public static CustomerDatabaseManager CustomerDatabaseInstance()
         {
-            
-
+     
             if (customerCustomer == null)
             {
                 customerCustomer = new CustomerDatabaseManager();
@@ -65,6 +66,8 @@ namespace CarRentaSYS.DataAccessObject
         {
             
             OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
+
+            OpenConnection();
 
             cmd.ExecuteNonQuery();
 

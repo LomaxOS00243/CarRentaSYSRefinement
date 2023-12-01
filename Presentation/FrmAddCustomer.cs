@@ -14,8 +14,8 @@ namespace CarRentaSYS
 {
     public partial class FrmAddCustomer : Form
     {
-
-        CustomerInputsValidator inputsValidator = new CustomerInputsValidator();
+        private CustomerController customerController = new CustomerController();
+        private CustomerInputsValidator inputsValidator = new CustomerInputsValidator();
 
         public FrmAddCustomer()
         {
@@ -26,6 +26,7 @@ namespace CarRentaSYS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Application of Strategy Pattern  to check input fields
 
             if (!inputsValidator.ValidateField(managerIDTxt, new ManagerIDValidationStrategy()))
             { return; } 
@@ -56,27 +57,29 @@ namespace CarRentaSYS
                 custTownTxt.Text, custCountryTxt.Text, custZipTxt.Text, custEmailTxt.Text, custTelTxt.Text,'O');
 
             
-
+            //Return true if the manager id is valid
             bool isValidId = addCustomer.CreateAccount(Convert.ToInt32(managerIDTxt.Text));
 
             if (isValidId)
             {
-                DisplayCreateAccountMessages();
-                ResetInputField();
-
+                DisplaySuccessfulMessagesInCreation();
+                ResetInputFields();
             }
             else
+            {
                 MessageBox.Show("Unauthorized manager ID", "Authorization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
 
 
         }
-        public void DisplayCreateAccountMessages()
+        public void DisplaySuccessfulMessagesInCreation()
         {
-            MessageBox.Show("Client " + custIDTxt.Text + " added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Customer " + custIDTxt.Text + " added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            MessageBox.Show("Client Account Createed", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Customer Account is Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public void ResetInputField()
+        public void ResetInputFields()
         {
             custIDTxt.Text = customerController.GetNextCustomerID().ToString("0000");
             custNameTxt.Clear();
@@ -91,25 +94,26 @@ namespace CarRentaSYS
 
         private void label3_Click(object sender, EventArgs e)
         {
-
+            //No implementation required. This is just a label element on FrmAddCustomer
         }
+
 
         private void frmAddClient_Load(object sender, EventArgs e)
         {
-
+            //Retrieve the next customer id number to display when this UI is invoked
             custIDTxt.Text = customerController.GetNextCustomerID().ToString("0000");
         }
 
 
         private void newTxtBox1_TextChanged(object sender, EventArgs e)
         {
-
+            //No implementation required. This is just a textbox element on FrmAddCustomer
         }
 
 
         private void newClientBox1_Enter(object sender, EventArgs e)
         {
-
+            //No implementation required. This is just a textbox element on FrmAddCustomer
         }
 
 
@@ -122,12 +126,12 @@ namespace CarRentaSYS
 
         private void custNameTxt_TextChanged(object sender, EventArgs e)
         {
-
+            //No implementation required. This is just a textbox element on FrmAddCustomer
         }
 
         private void managerLabel_Click(object sender, EventArgs e)
         {
-
+            //No implementation required. This is just a label element on FrmAddCustomer
         }
     }
 }

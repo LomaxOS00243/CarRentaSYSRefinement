@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CarRentaSYS.Presentation;
 
 
-namespace CarRentaSYS.Presentation
+namespace CarRentaSYS
 {
     internal static class Program
     {
@@ -17,7 +18,7 @@ namespace CarRentaSYS.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMainMenu());
+            Application.Run(new frmMainMnu());
         }
     }
 }

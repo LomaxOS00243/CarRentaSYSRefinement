@@ -114,6 +114,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
         {
             return status;
         }
+        
         public int GetNextCustomerID()
         { 
             int id = customerDatabaseManager.GetNextCustomerID();

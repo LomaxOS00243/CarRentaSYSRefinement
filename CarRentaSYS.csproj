@@ -132,11 +132,11 @@
     <Compile Include="Presentation\DBConnectUI.designer.cs">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FrmMainMenu.cs">
+    <Compile Include="Presentation\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FrmMainMenu.designer.cs">
-      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    <Compile Include="Presentation\frmMainMenu.designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,8 +149,8 @@
     <EmbeddedResource Include="Presentation\DBConnectUI.resx">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FrmMainMenu.resx">
-      <DependentUpon>FrmMainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

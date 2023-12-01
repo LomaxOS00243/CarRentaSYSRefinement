@@ -156,7 +156,7 @@ namespace CarRentaSYS
             this.managerIDTxt.Size = new System.Drawing.Size(123, 20);
             this.managerIDTxt.TabIndex = 14;
             // 
-            // frmCloseClient
+            // FrmCloseCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,8 +170,8 @@ namespace CarRentaSYS
             this.Controls.Add(this.label1);
             this.Controls.Add(this.custIDTxt);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "frmCloseClient";
-            this.Text = "Close Client";
+            this.Name = "FrmCloseCustomer";
+            this.Text = "Close Customer";
             this.Load += new System.EventHandler(this.frmCloseClient_Load);
             this.closeClientGrp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.closeClientGrd)).EndInit();

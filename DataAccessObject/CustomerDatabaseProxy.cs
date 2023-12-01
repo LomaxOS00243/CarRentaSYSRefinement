@@ -24,8 +24,12 @@ namespace CarRentaSYS.DataAccessObject
         public bool IsAuthorised(int managerID)
         {
            bool validID = manager.VerifyManagerID(managerID);
-            
+
+           manager.CloseConnection();
+
            return validID;
+           
+           
         }
     }
 }

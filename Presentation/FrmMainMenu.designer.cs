@@ -111,7 +111,7 @@ namespace CarRentaSYS
             // 
             // makeResToolStripMnu
             // 
-            this.makeResToolStripMnu.Name = "makeResToolStripMnu";
+            /*this.makeResToolStripMnu.Name = "makeResToolStripMnu";
             this.makeResToolStripMnu.Size = new System.Drawing.Size(240, 26);
             this.makeResToolStripMnu.Text = "Make Reservation";
             this.makeResToolStripMnu.Click += new System.EventHandler(this.makeResToolStripMnu_Click);
@@ -121,21 +121,21 @@ namespace CarRentaSYS
             this.cancelResToolStripMnu.Name = "cancelResToolStripMnu";
             this.cancelResToolStripMnu.Size = new System.Drawing.Size(240, 26);
             this.cancelResToolStripMnu.Text = "Cancel Reservation";
-            this.cancelResToolStripMnu.Click += new System.EventHandler(this.cancelResToolStripMnu_Click);
+            this.cancelResToolStripMnu.Click += new System.EventHandler(this.cancelResToolStripMnu_Click);*/
             // 
             // cCarToolStripMnu
             // 
-            this.cCarToolStripMnu.Name = "cCarToolStripMnu";
+            /*this.cCarToolStripMnu.Name = "cCarToolStripMnu";
             this.cCarToolStripMnu.Size = new System.Drawing.Size(240, 26);
             this.cCarToolStripMnu.Text = "Collect Car";
-            this.cCarToolStripMnu.Click += new System.EventHandler(this.cCarToolStripMnu_Click);
+            this.cCarToolStripMnu.Click += new System.EventHandler(this.cCarToolStripMnu_Click);*/
             // 
             // rCarToolStripMnu
             // 
-            this.rCarToolStripMnu.Name = "rCarToolStripMnu";
+            /*this.rCarToolStripMnu.Name = "rCarToolStripMnu";
             this.rCarToolStripMnu.Size = new System.Drawing.Size(240, 26);
             this.rCarToolStripMnu.Text = "Return Car";
-            this.rCarToolStripMnu.Click += new System.EventHandler(this.rCarToolStripMnu_Click);
+            this.rCarToolStripMnu.Click += new System.EventHandler(this.rCarToolStripMnu_Click);*/
             // 
             // bilToolStripMnu
             // 
@@ -149,10 +149,10 @@ namespace CarRentaSYS
             // 
             // issueInvoicesToolStripMenuItem
             // 
-            this.issueInvoicesToolStripMenuItem.Name = "issueInvoicesToolStripMenuItem";
+            /*this.issueInvoicesToolStripMenuItem.Name = "issueInvoicesToolStripMenuItem";
             this.issueInvoicesToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.issueInvoicesToolStripMenuItem.Text = "Issue Invoices";
-            this.issueInvoicesToolStripMenuItem.Click += new System.EventHandler(this.issueInvoicesToolStripMenuItem_Click);
+            this.issueInvoicesToolStripMenuItem.Click += new System.EventHandler(this.issueInvoicesToolStripMenuItem_Click);*/
             // 
             // recordClientToolStripMenuItem
             // 
@@ -171,10 +171,10 @@ namespace CarRentaSYS
             // 
             // yearlyRevenueAnalysisToolStripMenuItem
             // 
-            this.yearlyRevenueAnalysisToolStripMenuItem.Name = "yearlyRevenueAnalysisToolStripMenuItem";
+            /*this.yearlyRevenueAnalysisToolStripMenuItem.Name = "yearlyRevenueAnalysisToolStripMenuItem";
             this.yearlyRevenueAnalysisToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.yearlyRevenueAnalysisToolStripMenuItem.Text = "Yearly Revenue Analysis";
-            this.yearlyRevenueAnalysisToolStripMenuItem.Click += new System.EventHandler(this.yearlyRevenueAnalysisToolStripMenuItem_Click);
+            this.yearlyRevenueAnalysisToolStripMenuItem.Click += new System.EventHandler(this.yearlyRevenueAnalysisToolStripMenuItem_Click);*/
             // 
             // pictureBox1
             // 
