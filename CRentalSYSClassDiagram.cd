@@ -4,7 +4,7 @@
     <Position X="10.75" Y="2.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>BAQgASAASIAAAIIgCAAABBAHRAIEAAACAEAQQAAARAA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\CustomerController.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\CustomerController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="customerDatabaseManager" />
@@ -15,7 +15,7 @@
     <Position X="0.5" Y="2.5" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAQAEACAgAAIAAABAAAQAAAAAEBEAgAAAAAAA=</HashCode>
-      <FileName>DataAccessObject\CustomerDatabaseManager.cs</FileName>
+      <FileName>DataAccessLayer\CustomerDatabaseManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="customerCustomer" />
@@ -26,7 +26,7 @@
     <Position X="5.75" Y="2.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAEAAAAAAQAAAAAAAAAAAA=</HashCode>
-      <FileName>DataAccessObject\CustomerDatabaseProxy.cs</FileName>
+      <FileName>DataAccessLayer\CustomerDatabaseProxy.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="manager" />
@@ -37,7 +37,7 @@
     <Position X="6.5" Y="9.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAgAAAAAAACAAAEAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\CustomerInputsValidator.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\CustomerInputsValidator.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_customerValidationStrategy" />
@@ -47,7 +47,7 @@
     <Position X="9.25" Y="11.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\EmailValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\EmailValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.1" />
   </Class>
@@ -55,7 +55,7 @@
     <Position X="2.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\AddressValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\AddressValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -63,25 +63,26 @@
     <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\NameValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\NameValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CarRentaSYS.FrmAddCustomer" Collapsed="true">
     <Position X="10.75" Y="9.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>VQAAAAUAACgAEBgAIACAAAIKBAAAQIgIIGAkABIAACA=</HashCode>
-      <FileName>Presentation\FrmAddCustomer.cs</FileName>
+      <HashCode>VQAAAAEAACgAEBgAIACAABIKhAIAYIAIJCAgABIAACA=</HashCode>
+      <FileName>PresentationLayer\FrmAddCustomer.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="inputsValidator" />
+      <Field Name="customerController" />
     </ShowAsAssociation>
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.CountryValidationStrategy">
     <Position X="5.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\CountryValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\CountryValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -89,7 +90,7 @@
     <Position X="4" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\TownValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\TownValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -97,7 +98,7 @@
     <Position X="7.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\ZipcodeValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\ZipcodeValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -105,22 +106,22 @@
     <Position X="11.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\TelnoValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\TelnoValidationStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="CarRentaSYS.DataAccessObject.ICustomerDatabase">
-    <Position X="0.5" Y="0.5" Width="2" />
+    <Position X="3" Y="0.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DataAccessObject\ICustomerDatabase.cs</FileName>
+      <FileName>DataAccessLayer\ICustomerDatabase.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="CarRentaSYS.BusinessLogic.CustomerLogic.ICustomerValidationStrategy">
     <Position X="0.5" Y="9.25" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
-      <FileName>BusinessLogic\CustomerLogic\ICustomerValidationStrategy.cs</FileName>
+      <FileName>BusinessLogicLayer\CustomerLogic\ICustomerValidationStrategy.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

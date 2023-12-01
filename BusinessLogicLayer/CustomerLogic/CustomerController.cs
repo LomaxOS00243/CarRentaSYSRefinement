@@ -11,6 +11,11 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 {
     internal class CustomerController
     {
+
+        private readonly CustomerDatabaseManager customerDatabaseManager = CustomerDatabaseManager.CustomerDatabaseInstance();
+
+        private readonly CustomerDatabaseProxy customerDatabaseProxy = new CustomerDatabaseProxy(); 
+
         private int customerId;
         private string name;
         private string address;
@@ -21,8 +26,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
         private string telNo;
         private char status;
 
-        private readonly CustomerDatabaseManager customerDatabaseManager = CustomerDatabaseManager.CustomerDatabaseInstance();
-        private readonly CustomerDatabaseProxy customerDatabaseProxy = new CustomerDatabaseProxy();
+        
 
         public CustomerController()
         { 
@@ -136,6 +140,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
                 this.telNo + "','" +
                 this.status + "')";
 
+            //Request the authorisation to create an account via the Proxy
             if (customerDatabaseProxy.IsAuthorised(managerID))
             {
                 customerDatabaseProxy.CreateCustomerAccount(query);

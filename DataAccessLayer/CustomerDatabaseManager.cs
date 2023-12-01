@@ -116,7 +116,7 @@ namespace CarRentaSYS.DataAccessObject
             return dataSet;
         }
 
-        //Verify the the existance of customer account in closing.
+    
         public Boolean  IsValidCustomerID(int custID)
         {
             string sqlQuery = "SELECT CustomerID FROM Customers WHERE CustomerID = " + custID + " AND Status = 'O' ";

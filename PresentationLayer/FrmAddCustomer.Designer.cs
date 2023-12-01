@@ -100,7 +100,7 @@ namespace CarRentaSYS
             this.addClientBtn.TabIndex = 2;
             this.addClientBtn.Text = "Add";
             this.addClientBtn.UseVisualStyleBackColor = false;
-            this.addClientBtn.Click += new System.EventHandler(this.button1_Click);
+            this.addClientBtn.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label14
             // 
@@ -275,7 +275,7 @@ namespace CarRentaSYS
             this.label3.Size = new System.Drawing.Size(60, 20);
             this.label3.TabIndex = 2;
             this.label3.Text = "Name:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label2
             // 
@@ -345,7 +345,7 @@ namespace CarRentaSYS
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAddCustomer";
             this.Text = "New Client Account";
-            this.Load += new System.EventHandler(this.frmAddClient_Load);
+            this.Load += new System.EventHandler(this.FrmAddClient_Load);
             this.newClientBox1.ResumeLayout(false);
             this.newClientBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);

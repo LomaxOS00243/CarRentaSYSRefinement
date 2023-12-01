@@ -100,30 +100,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\CustomerLogic\AddressValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerController.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CountryValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\EmailValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\ManagerIDValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\NameValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\TelnoValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\TownValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerInputsValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\ZipcodeValidationStrategy.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\ICustomerValidationStrategy.cs" />
-    <Compile Include="DataAccessObject\CustomerDatabaseManager.cs" />
-    <Compile Include="DataAccessObject\CustomerDatabaseProxy.cs" />
-    <Compile Include="DataAccessObject\ICustomerDatabase.cs" />
-    <Compile Include="Presentation\FrmAddCustomer.cs">
+    <Compile Include="BusinessLogicLayer\CustomerLogic\AddressValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\CustomerController.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\CountryValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\EmailValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\ManagerIDValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\NameValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\TelnoValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\TownValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\CustomerInputsValidator.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\ZipcodeValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\ICustomerValidationStrategy.cs" />
+    <Compile Include="DataAccessLayer\CustomerDatabaseManager.cs" />
+    <Compile Include="DataAccessLayer\CustomerDatabaseProxy.cs" />
+    <Compile Include="DataAccessLayer\ICustomerDatabase.cs" />
+    <Compile Include="PresentationLayer\FrmAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FrmAddCustomer.Designer.cs">
+    <Compile Include="PresentationLayer\FrmAddCustomer.Designer.cs">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\FrmCloseCustomer.cs">
+    <Compile Include="PresentationLayer\FrmCloseCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\FrmCloseCustomer.designer.cs">
+    <Compile Include="PresentationLayer\FrmCloseCustomer.designer.cs">
       <DependentUpon>FrmCloseCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Tests\DatabaseConnection\DBConnectUI.cs">
@@ -132,24 +132,24 @@
     <Compile Include="Tests\DatabaseConnection\DBConnectUI.designer.cs">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\frmMainMenu.cs">
+    <Compile Include="PresentationLayer\frmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\frmMainMenu.designer.cs">
+    <Compile Include="PresentationLayer\frmMainMenu.designer.cs">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Presentation\FrmAddCustomer.resx">
+    <EmbeddedResource Include="PresentationLayer\FrmAddCustomer.resx">
       <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\FrmCloseCustomer.resx">
+    <EmbeddedResource Include="PresentationLayer\FrmCloseCustomer.resx">
       <DependentUpon>FrmCloseCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\DatabaseConnection\DBConnectUI.resx">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\frmMainMenu.resx">
+    <EmbeddedResource Include="PresentationLayer\frmMainMenu.resx">
       <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -14,8 +14,8 @@ namespace CarRentaSYS
 {
     public partial class FrmAddCustomer : Form
     {
-        private CustomerController customerController = new CustomerController();
-        private CustomerInputsValidator inputsValidator = new CustomerInputsValidator();
+        private readonly CustomerController customerController = new CustomerController();
+        private readonly CustomerInputsValidator inputsValidator = new CustomerInputsValidator();
 
         public FrmAddCustomer()
         {
@@ -24,7 +24,7 @@ namespace CarRentaSYS
 
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             //Application of Strategy Pattern  to check input fields
 
@@ -53,12 +53,14 @@ namespace CarRentaSYS
             { return; }
 
 
-            CustomerController addCustomer = new CustomerController(Convert.ToInt32(custIDTxt.Text), custNameTxt.Text, custAddTxt.Text,
-                custTownTxt.Text, custCountryTxt.Text, custZipTxt.Text, custEmailTxt.Text, custTelTxt.Text,'O');
+            CustomerController addNewAccount = new CustomerController(Convert.ToInt32(custIDTxt.Text), custNameTxt.Text, custAddTxt.Text,custTownTxt.Text, 
+
+                                                                      custCountryTxt.Text, custZipTxt.Text, custEmailTxt.Text, custTelTxt.Text,'O');
 
             
             //Return true if the manager id is valid
-            bool isValidId = addCustomer.CreateAccount(Convert.ToInt32(managerIDTxt.Text));
+            bool isValidId = addNewAccount.CreateAccount(Convert.ToInt32(managerIDTxt.Text));
+
 
             if (isValidId)
             {
@@ -92,13 +94,13 @@ namespace CarRentaSYS
             custTelTxt.Clear();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void Label3_Click(object sender, EventArgs e)
         {
             //No implementation required. This is just a label element on FrmAddCustomer
         }
 
 
-        private void frmAddClient_Load(object sender, EventArgs e)
+        private void FrmAddClient_Load(object sender, EventArgs e)
         {
             //Retrieve the next customer id number to display when this UI is invoked
             custIDTxt.Text = customerController.GetNextCustomerID().ToString("0000");

@@ -15,6 +15,7 @@ namespace CarRentaSYS.DataAccessObject
         {
             manager = CustomerDatabaseManager.CustomerDatabaseInstance();
         }
+
         public void CreateCustomerAccount(string sqlQuery)
         {
             manager.CreateCustomerAccount(sqlQuery);
