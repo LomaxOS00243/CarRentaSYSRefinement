@@ -10,28 +10,28 @@ using System.Windows.Forms;
 
 namespace CarRentaSYS
 {
-    public partial class frmCloseClient : Form
+    public partial class FrmCloseCustomer : Form
     {
-        public frmCloseClient()
+        public FrmCloseCustomer()
         {
             InitializeComponent();
         }
 
         private void findClientBtn_Click(object sender, EventArgs e)
         {
-            bool isValidID = Clients.isValidCliendID(Convert.ToInt32(findClientTxt.Text));
+            bool isValidID = Clients.isValidCliendID(Convert.ToInt32(custIDTxt.Text));
             //Validation
-            if (findClientTxt.Text.Equals("") || !isValidID)
+            if (custIDTxt.Text.Equals("") || !isValidID)
             {
                 MessageBox.Show("Sorry! this client is closed or you entered incorrect client Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                findClientTxt.Focus();
+                custIDTxt.Focus();
 
             }
             else
             {
                 //Find the matching client
-                closeClientGrd.DataSource = Clients.findClient(Convert.ToInt32(findClientTxt.Text)).Tables["Client"];
+                closeClientGrd.DataSource = Clients.findClient(Convert.ToInt32(custIDTxt.Text)).Tables["Client"];
                 
 
                 //Make the matching client visible
@@ -56,15 +56,15 @@ namespace CarRentaSYS
 
             if (close == DialogResult.Yes)
             {
-                bool closeClient = Clients.closeClient(Convert.ToInt32(findClientTxt.Text));
+                bool closeClient = Clients.closeClient(Convert.ToInt32(custIDTxt.Text));
                 //Close account
                 if (closeClient)
                 {
-                    MessageBox.Show("The client " + findClientTxt.Text + "is Closed!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The client " + custIDTxt.Text + "is Closed!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 }
-                findClientTxt.Clear();
+                custIDTxt.Clear();
                 closeClientGrp.Visible = false;
             }
             

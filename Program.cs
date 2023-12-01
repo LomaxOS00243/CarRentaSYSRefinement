@@ -17,7 +17,7 @@ namespace CarRentaSYS.Presentation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddClient());
+            Application.Run(new FrmMainMenu());
         }
     }
 }

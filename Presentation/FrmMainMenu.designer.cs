@@ -34,7 +34,6 @@ namespace CarRentaSYS
             this.clToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
             this.nCToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
             this.closeClAccToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
-            this.printClStatToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
             this.rntToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
             this.makeResToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
             this.cancelResToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +67,7 @@ namespace CarRentaSYS
             this.mnuStrip1.Location = new System.Drawing.Point(0, 1);
             this.mnuStrip1.Name = "mnuStrip1";
             this.mnuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.mnuStrip1.Size = new System.Drawing.Size(507, 28);
+            this.mnuStrip1.Size = new System.Drawing.Size(530, 28);
             this.mnuStrip1.TabIndex = 0;
             this.mnuStrip1.Text = "menuStrip1";
             this.mnuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -78,33 +77,25 @@ namespace CarRentaSYS
             this.clToolStripMnu.BackColor = System.Drawing.SystemColors.Control;
             this.clToolStripMnu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nCToolStripMnu,
-            this.closeClAccToolStripMnu,
-            this.printClStatToolStripMnu});
+            this.closeClAccToolStripMnu});
             this.clToolStripMnu.Name = "clToolStripMnu";
-            this.clToolStripMnu.Size = new System.Drawing.Size(79, 26);
-            this.clToolStripMnu.Text = "Clients";
+            this.clToolStripMnu.Size = new System.Drawing.Size(102, 26);
+            this.clToolStripMnu.Text = "Customer";
             this.clToolStripMnu.Click += new System.EventHandler(this.clToolStripMnu_Click);
             // 
             // nCToolStripMnu
             // 
             this.nCToolStripMnu.Name = "nCToolStripMnu";
-            this.nCToolStripMnu.Size = new System.Drawing.Size(262, 26);
-            this.nCToolStripMnu.Text = "New Client ";
+            this.nCToolStripMnu.Size = new System.Drawing.Size(207, 26);
+            this.nCToolStripMnu.Text = "Create Account";
             this.nCToolStripMnu.Click += new System.EventHandler(this.nCToolStripMnu_Click);
             // 
             // closeClAccToolStripMnu
             // 
             this.closeClAccToolStripMnu.Name = "closeClAccToolStripMnu";
-            this.closeClAccToolStripMnu.Size = new System.Drawing.Size(262, 26);
-            this.closeClAccToolStripMnu.Text = "Close Client Account";
+            this.closeClAccToolStripMnu.Size = new System.Drawing.Size(207, 26);
+            this.closeClAccToolStripMnu.Text = "Close Account";
             this.closeClAccToolStripMnu.Click += new System.EventHandler(this.closeClAccToolStripMnu_Click);
-            // 
-            // printClStatToolStripMnu
-            // 
-            this.printClStatToolStripMnu.Name = "printClStatToolStripMnu";
-            this.printClStatToolStripMnu.Size = new System.Drawing.Size(262, 26);
-            this.printClStatToolStripMnu.Text = "Print Client Statement";
-            this.printClStatToolStripMnu.Click += new System.EventHandler(this.printClStatToolStripMnu_Click);
             // 
             // rntToolStripMnu
             // 
@@ -250,7 +241,6 @@ namespace CarRentaSYS
         private System.Windows.Forms.ToolStripMenuItem clToolStripMnu;
         private System.Windows.Forms.ToolStripMenuItem nCToolStripMnu;
         private System.Windows.Forms.ToolStripMenuItem closeClAccToolStripMnu;
-        private System.Windows.Forms.ToolStripMenuItem printClStatToolStripMnu;
         private System.Windows.Forms.ToolStripMenuItem rntToolStripMnu;
         private System.Windows.Forms.ToolStripMenuItem makeResToolStripMnu;
         private System.Windows.Forms.ToolStripMenuItem cancelResToolStripMnu;

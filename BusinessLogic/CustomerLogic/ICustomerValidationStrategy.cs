@@ -9,6 +9,6 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 {
     internal interface ICustomerValidationStrategy
     {
-        bool Validate(TextBox input);
+        void ReturnResponse();
     }
 }

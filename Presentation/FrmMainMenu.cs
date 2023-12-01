@@ -20,7 +20,7 @@ namespace CarRentaSYS
         private void nCToolStripMnu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmAddClient addForm = new frmAddClient();
+            FrmAddCustomer addForm = new FrmAddCustomer();
             addForm.Show();
 
         }
@@ -35,14 +35,14 @@ namespace CarRentaSYS
         private void closeClAccToolStripMnu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmCloseClient closeClient = new frmCloseClient();
+            FrmCloseCustomer closeClient = new FrmCloseCustomer();
             closeClient.Show();
         }
 
-        private void printClStatToolStripMnu_Click(object sender, EventArgs e)
+        /*private void printClStatToolStripMnu_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmPrintStatement printStatement = new frmPrintStatement();
+            /*this.Hide();
+            FrmPrintStatement printStatement = new FrmPrintStatement();
             printStatement.Show();
         }
 
@@ -92,19 +92,19 @@ namespace CarRentaSYS
                 MessageBox.Show("The Issue Invoices can only be made on the first day of next month","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             
-        }
+        }*/
 
         private void backToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        /*private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             frmYearlyRevenue frmYearlyRevenue = new frmYearlyRevenue();
             frmYearlyRevenue.Show();
-        }
+        }*/
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

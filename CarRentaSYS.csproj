@@ -100,49 +100,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerAddressValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerControllerManager.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerCountryValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerEmailValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerIDValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerNameValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerTelnoValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerTownValidator.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerValidationClient.cs" />
-    <Compile Include="BusinessLogic\CustomerLogic\CustomerZipcodeValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\AddressValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerController.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CountryValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\EmailValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\ManagerIDValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\NameValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\TelnoValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\TownValidationStrategy.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\CustomerInputsValidator.cs" />
+    <Compile Include="BusinessLogic\CustomerLogic\ZipcodeValidationStrategy.cs" />
     <Compile Include="BusinessLogic\CustomerLogic\ICustomerValidationStrategy.cs" />
-    <Compile Include="Clients.cs" />
     <Compile Include="DataAccessObject\CustomerDatabaseManager.cs" />
-    <Compile Include="DBConnect.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="DataAccessObject\CustomerDatabaseProxy.cs" />
+    <Compile Include="DataAccessObject\ICustomerDatabase.cs" />
+    <Compile Include="Presentation\FrmAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentation\FrmAddCustomer.Designer.cs">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\frmAddClient.cs">
+    <Compile Include="Presentation\FrmCloseCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\frmAddClient.Designer.cs">
-      <DependentUpon>frmAddClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCancelReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCancelReservation.designer.cs">
-      <DependentUpon>frmCancelReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCloseClient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCloseClient.designer.cs">
-      <DependentUpon>frmCloseClient.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmCollectCar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCollectCar.designer.cs">
-      <DependentUpon>frmCollectCar.cs</DependentUpon>
+    <Compile Include="Presentation\FrmCloseCustomer.designer.cs">
+      <DependentUpon>FrmCloseCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\DBConnectUI.cs">
       <SubType>Form</SubType>
@@ -150,79 +132,25 @@
     <Compile Include="Presentation\DBConnectUI.designer.cs">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmIssueInvoice.cs">
+    <Compile Include="Presentation\FrmMainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmIssueInvoice.designer.cs">
-      <DependentUpon>frmIssueInvoice.cs</DependentUpon>
+    <Compile Include="Presentation\FrmMainMenu.designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMainMenu.designer.cs">
-      <DependentUpon>frmMainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMakeReservation.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMakeReservation.designer.cs">
-      <DependentUpon>frmMakeReservation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPrintStatement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPrintStatement.designer.cs">
-      <DependentUpon>frmPrintStatement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmReturnCar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReturnCar.designer.cs">
-      <DependentUpon>frmReturnCar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmYearlyRevenue.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmYearlyRevenue.designer.cs">
-      <DependentUpon>frmYearlyRevenue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Invoices.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reservation.cs" />
-    <Compile Include="Type.cs" />
-    <EmbeddedResource Include="Presentation\frmAddClient.resx">
-      <DependentUpon>frmAddClient.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\FrmAddCustomer.resx">
+      <DependentUpon>FrmAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCancelReservation.resx">
-      <DependentUpon>frmCancelReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCloseClient.resx">
-      <DependentUpon>frmCloseClient.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmCollectCar.resx">
-      <DependentUpon>frmCollectCar.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\FrmCloseCustomer.resx">
+      <DependentUpon>FrmCloseCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\DBConnectUI.resx">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmIssueInvoice.resx">
-      <DependentUpon>frmIssueInvoice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMainMenu.resx">
-      <DependentUpon>frmMainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMakeReservation.resx">
-      <DependentUpon>frmMakeReservation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPrintStatement.resx">
-      <DependentUpon>frmPrintStatement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReturnCar.resx">
-      <DependentUpon>frmReturnCar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmYearlyRevenue.resx">
-      <DependentUpon>frmYearlyRevenue.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -233,6 +161,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CRentalSYSClassDiagram.cd" />
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
     </None>
