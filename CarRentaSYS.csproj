@@ -126,10 +126,10 @@
     <Compile Include="Presentation\FrmCloseCustomer.designer.cs">
       <DependentUpon>FrmCloseCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentation\DBConnectUI.cs">
+    <Compile Include="Tests\DatabaseConnection\DBConnectUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation\DBConnectUI.designer.cs">
+    <Compile Include="Tests\DatabaseConnection\DBConnectUI.designer.cs">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentation\frmMainMenu.cs">
@@ -146,7 +146,7 @@
     <EmbeddedResource Include="Presentation\FrmCloseCustomer.resx">
       <DependentUpon>FrmCloseCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentation\DBConnectUI.resx">
+    <EmbeddedResource Include="Tests\DatabaseConnection\DBConnectUI.resx">
       <DependentUpon>DBConnectUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\frmMainMenu.resx">
