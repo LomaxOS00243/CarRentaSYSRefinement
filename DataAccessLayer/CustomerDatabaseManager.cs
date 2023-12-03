@@ -35,7 +35,7 @@ namespace CarRentaSYS.DataAccessObject
         }
         public int GetNextCustomerID()
         {
-            int customerNextID;
+            int nextCustomerID;
 
             string sqlQuery = "SELECT MAX(CustomerID) FROM Customers";
 
@@ -49,31 +49,20 @@ namespace CarRentaSYS.DataAccessObject
             dataReader.Read();
 
             if (dataReader.IsDBNull(0))
-            { 
-                customerNextID = 1;
+            {
+                nextCustomerID = 1;
             }
             else
             {
-                customerNextID = dataReader.GetInt32(0) + 1;
+                nextCustomerID = dataReader.GetInt32(0) + 1;
             }
 
             CloseConnection();
 
-            return customerNextID;
+            return nextCustomerID;
         }
         
-        public void CreateCustomerAccount(string sqlQuery)
-        {
-            
-            OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
-
-            OpenConnection();
-
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
-
-        }
+        
 
         public bool VerifyManagerID(int managerID)
         {
@@ -96,10 +85,44 @@ namespace CarRentaSYS.DataAccessObject
 
         }
 
-        public DataSet FindCustomerAccount(int custID)
+        
+        public bool IsAccountOpened(int customerID)
+        {
+            string sqlQuery = "SELECT CustomerID FROM Customers WHERE CustomerID = " + customerID + " AND Status = 'O' ";
+
+            OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
+
+            OpenConnection();
+
+            OracleDataReader dataReader = cmd.ExecuteReader();
+
+            if (dataReader.Read())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public void CreateCustomerAccount(string sqlQuery)
+        {
+
+            OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
+
+            OpenConnection();
+
+            cmd.ExecuteNonQuery();
+
+            CloseConnection();
+
+        }
+
+        public DataSet FindCustomerAccountForClosure(int customerID)
         {
             string sqlQuery = "SELECT CustomerID, Name, Address, Town, Country, Zipcode, Email, Telno FROM Customers" +
-                " WHERE CustomerID = " + custID + " AND Status = 'O' ";
+                " WHERE CustomerID = " + customerID + " AND Status = 'O' ";
 
             OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
 
@@ -117,28 +140,10 @@ namespace CarRentaSYS.DataAccessObject
         }
 
     
-        public Boolean  IsValidCustomerID(int custID)
+        
+        public bool CloseCustomerAccount(int customerID)
         {
-            string sqlQuery = "SELECT CustomerID FROM Customers WHERE CustomerID = " + custID + " AND Status = 'O' ";
-
-            OracleCommand cmd = new OracleCommand( sqlQuery, databaseConnection);
-
-            OpenConnection();
-
-            OracleDataReader dataReader = cmd.ExecuteReader();
-
-            if (dataReader.Read())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-        public Boolean CloseCustomerAccount(int custID)
-        {
-            string sqlQuery = "UPDATE Customers SET Status = 'C' WHERE CustomerId = " + custID;
+            string sqlQuery = "UPDATE Customers SET Status = 'C' WHERE CustomerId = " + customerID;
 
             OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
 

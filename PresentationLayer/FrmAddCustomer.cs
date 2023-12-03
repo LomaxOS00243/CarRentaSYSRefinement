@@ -22,34 +22,32 @@ namespace CarRentaSYS
             InitializeComponent();
         }
 
-        
-
-        private void Button1_Click(object sender, EventArgs e)
+        private void AddNewAccount_Click(object sender, EventArgs e)
         {
             //Application of Strategy Pattern  to check input fields
 
-            if (!inputsValidator.ValidateField(managerIDTxt, new ManagerIDValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(managerIDTxt, new ManagerIDValidationStrategy()))
             { return; } 
 
-            if (!inputsValidator.ValidateField(custNameTxt, new NameValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custNameTxt, new NameValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.ValidateField(custAddTxt, new AddressValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custAddTxt, new AddressValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.ValidateField(custTownTxt, new TownValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custTownTxt, new TownValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.ValidateField(custCountryTxt, new CountryValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custCountryTxt, new CountryValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.ValidateField(custZipTxt, new ZipcodeValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custZipTxt, new ZipcodeValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.ValidateField(custEmailTxt, new EmailValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custEmailTxt, new EmailValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.ValidateField(custTelTxt, new TelnoValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
             { return; }
 
 
@@ -64,22 +62,23 @@ namespace CarRentaSYS
 
             if (isValidId)
             {
-                DisplaySuccessfulMessagesInCreation();
+                ConfirmNewAccountCreation();
                 ResetInputFields();
             }
             else
             {
-                MessageBox.Show("Unauthorized manager ID", "Authorization Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                customerController.DisplayErrorMessage("Unauthorized manager ID", "Authorization Error");
+                
             }
                 
 
-
         }
-        public void DisplaySuccessfulMessagesInCreation()
+        public void ConfirmNewAccountCreation()
         {
-            MessageBox.Show("Customer " + custIDTxt.Text + " added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            customerController.DisplayInformationMessage("Customer " + custIDTxt.Text + " added successfully", "Success");
 
-            MessageBox.Show("Customer Account is Created", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            customerController.DisplayInformationMessage("Customer Account is Created", "Success");
+         
         }
         public void ResetInputFields()
         {
@@ -94,44 +93,42 @@ namespace CarRentaSYS
             custTelTxt.Clear();
         }
 
-        private void Label3_Click(object sender, EventArgs e)
-        {
-            //No implementation required. This is just a label element on FrmAddCustomer
-        }
-
-
+        
         private void FrmAddClient_Load(object sender, EventArgs e)
         {
-            //Retrieve the next customer id number to display when this UI is invoked
+            //Return the next customer id number when this form is invoked
             custIDTxt.Text = customerController.GetNextCustomerID().ToString("0000");
         }
 
-
-        private void newTxtBox1_TextChanged(object sender, EventArgs e)
-        {
-            //No implementation required. This is just a textbox element on FrmAddCustomer
-        }
-
-
-        private void newClientBox1_Enter(object sender, EventArgs e)
-        {
-            //No implementation required. This is just a textbox element on FrmAddCustomer
-        }
-
-
-        private void backToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void BackToMenuBtn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             frmMainMnu mainMenu = new frmMainMnu();
             mainMenu.Show();
         }
 
-        private void custNameTxt_TextChanged(object sender, EventArgs e)
+
+        private void NewTxtBox1_TextChanged(object sender, EventArgs e)
         {
             //No implementation required. This is just a textbox element on FrmAddCustomer
         }
 
-        private void managerLabel_Click(object sender, EventArgs e)
+        private void NewCustomerBox1_Enter(object sender, EventArgs e)
+        {
+            //No implementation required. This is just a textbox element on FrmAddCustomer
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+            //No implementation required. This is just a label element on FrmAddCustomer
+        }
+
+        private void CustomerNameTxt_TextChanged(object sender, EventArgs e)
+        {
+            //No implementation required. This is just a textbox element on FrmAddCustomer
+        }
+
+        private void ManagerIDLabel_Click(object sender, EventArgs e)
         {
             //No implementation required. This is just a label element on FrmAddCustomer
         }

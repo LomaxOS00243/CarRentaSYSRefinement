@@ -2,6 +2,7 @@
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 
         private readonly CustomerDatabaseProxy customerDatabaseProxy = new CustomerDatabaseProxy(); 
 
-        private int customerId;
+        private int customerID;
         private string name;
         private string address;
         private string town;
@@ -30,7 +31,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 
         public CustomerController()
         { 
-            this.customerId = 0;
+            this.customerID = 0;
             this.name = " ";
             this.address = " ";
             this.town = " ";
@@ -44,7 +45,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 
         public CustomerController(int customerId, string name, string address, string town, string country, string zipCode, string email, string telNo, char status)
         {
-            this.customerId = customerId;
+            this.customerID = customerId;
             this.name = name;
             this.address = address;
             this.town = town;
@@ -54,13 +55,13 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
             this.telNo = telNo;
             this.status = status;
         }
-        public void SetClientId(int customerID)
+        public void SetClientId(int customerId)
         {
-            customerId = customerID;
+            customerID = customerId;
         }
         public int GetClientId()
         {
-            return customerId;
+            return customerID;
         }
         public void SetName(string names)
         {
@@ -130,7 +131,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
         {
 
             string query = "INSERT INTO Customers VALUES(" +
-                this.customerId + ",'" +
+                this.customerID + ",'" +
                 this.name + "','" +
                 this.address + "','" +
                 this.town + "','" +
@@ -141,13 +142,53 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
                 this.status + "')";
 
             //Request the authorisation to create an account via the Proxy
-            if (customerDatabaseProxy.IsAuthorised(managerID))
+            if (GetAuthorisation(managerID))
             {
                 customerDatabaseProxy.CreateCustomerAccount(query);
                 return true;
             }
             else
                 return false;
+        }
+
+        
+        public bool RequestAccountStatus(int customerID)
+        { 
+            return customerDatabaseProxy.IsAccountOpened(customerID);
+        }
+
+
+        public DataSet FindCustomerAccount(int customerID)
+        {
+            return customerDatabaseProxy.FindCustomerAccountForClosure(customerID); 
+        }
+
+        public bool GetAuthorisation(int managerID)
+        {
+            return customerDatabaseProxy.IsAuthorisedManagerID(managerID);
+        }
+
+        public bool ClosingCustomerAccount(int customerID)
+        {
+            bool accountClosureResponse = customerDatabaseManager.CloseCustomerAccount(customerID);
+            customerDatabaseManager.CloseConnection();
+            return accountClosureResponse;
+
+        }
+
+        public void DisplayInformationMessage(string message, string title)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void DisplayErrorMessage(string message, string title)
+        {
+            MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public DialogResult DisplayConfirmationBottons(string message, string title)
+        {
+            return MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
         }
     }
 }

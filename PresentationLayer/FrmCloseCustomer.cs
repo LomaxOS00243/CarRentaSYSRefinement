@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CarRentaSYS.BusinessLogic.CustomerLogic;
+using CarRentaSYS.BusinessLogicLayer.CustomerLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,75 +14,128 @@ namespace CarRentaSYS
 {
     public partial class FrmCloseCustomer : Form
     {
+        private readonly CustomerController customerController = new CustomerController();
+        private readonly CustomerInputsValidator inputsValidator = new CustomerInputsValidator();
+
         public FrmCloseCustomer()
         {
             InitializeComponent();
         }
 
-        private void findClientBtn_Click(object sender, EventArgs e)
+        private void FindCustomerAccountBtn_Click(object sender, EventArgs e)
         {
-            //bool isValidID = Clients.isValidCliendID(Convert.ToInt32(custIDTxt.Text));
-            //Validation
-            if (custIDTxt.Text.Equals(""))
-            {
-                MessageBox.Show("Sorry! this client is closed or you entered incorrect client Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                custIDTxt.Focus();
-
-            }
-            else
-            {
-                //Find the matching client
-                //closeClientGrd.DataSource = Clients.findClient(Convert.ToInt32(custIDTxt.Text)).Tables["Client"];
-                
-
-                //Make the matching client visible
-                closeClientGrp.Visible = true;
-            }
             
+            if (!inputsValidator.VerifyEmptyField(managerIDTxt, new ManagerIDValidationStrategy()))
+            { return; }
 
-            
+            if (!inputsValidator.VerifyEmptyField(custIDTxt, new IDValidationStrategy()))
+            { return; }
+
+
+            if (!IsManagerAuthorized())
+            {
+                customerController.DisplayErrorMessage("Unauthorised manager ID", "Authorization Error");
+                return;
+            }
+
+            if (!IsAccountOpened())
+            {
+                customerController.DisplayErrorMessage("Account already closed or No created yet", "Account Error");
+                return;
+            }
+
+            DisplayCustomerAccount();
+
+        }
+
+        private bool IsManagerAuthorized()
+        {
+            try
+            {
+                int managerId = Convert.ToInt32(managerIDTxt.Text);
+                return customerController.GetAuthorisation(managerId);
+            }
+            catch (FormatException)
+            {
+                customerController.DisplayErrorMessage("Invalid Manager ID format", "Input Error");
+                return false;
+            }
+        }
+
+        private bool IsAccountOpened()
+        {
+            try
+            {
+                int customerId = Convert.ToInt32(custIDTxt.Text);
+                return customerController.RequestAccountStatus(customerId);
+            }
+            catch (FormatException)
+            {
+                customerController.DisplayErrorMessage("Invalid Customer ID format", "Input Error");
+                return false;
+            }
+        }
+
+        private void DisplayCustomerAccount()
+        {
+            int customerId = Convert.ToInt32(custIDTxt.Text);
+            closeCustomerGrd.DataSource = customerController.FindCustomerAccount(customerId).Tables["Customers"];
+            closeCustomerGrp.Visible = true;
         }
 
         
 
-        private void frmCloseClient_Load(object sender, EventArgs e)
+        private void CloseCustomerAccountBtn_Click(object sender, EventArgs e)
         {
-            //No implementation required. This is just the FrmCloseClient UI
-        }
+            DialogResult close = customerController.DisplayConfirmationBottons("Would you like to continue?", "Confirmation");
 
-        private void closeClientBtn_Click(object sender, EventArgs e)
-        {
-            DialogResult close = MessageBox.Show("You are about to close this client, Are you sure?", "Confrimation", MessageBoxButtons.YesNo,
-                   MessageBoxIcon.Information);
-
-            /*if (close == DialogResult.Yes)
+            if (close == DialogResult.Yes)
             {
-                bool closeClient = Clients.closeClient(Convert.ToInt32(custIDTxt.Text));
-                //Close account
-                if (closeClient)
+                if (IsCustomerClosed())
                 {
-                    MessageBox.Show("The client " + custIDTxt.Text + "is Closed!", "Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                    customerController.DisplayInformationMessage("Customer ID " + custIDTxt.Text + "is Closed!", "Confirmation");
                 }
                 custIDTxt.Clear();
-                closeClientGrp.Visible = false;
-            }*/
-            
+                closeCustomerGrp.Visible = false;
+            }
             
         }
 
-        private void backToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private bool IsCustomerClosed()
+        {
+            try
+            {
+                int customerId = Convert.ToInt32(custIDTxt.Text);
+                return customerController.ClosingCustomerAccount(customerId);
+            }
+            catch (FormatException)
+            {
+                customerController.DisplayErrorMessage("Invalid Customer ID format", "Input Error");
+                return false;
+            }
+        }
+
+        private void BackToMenuBtn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             frmMainMnu backForm = new frmMainMnu();
             backForm.Show();
         }
 
-        private void closeClientGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void FrmCloseCustomer_Load(object sender, EventArgs e)
+        {
+            //No implementation required. This is just the FrmCloseClient UI
+        }
+
+        private void CloseCustomerGrd_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //No implementation required. This is just a grid element on FrmCloseCustomer
+        }
+
+        private void Menu1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            // No implementation required.
         }
     }
 }

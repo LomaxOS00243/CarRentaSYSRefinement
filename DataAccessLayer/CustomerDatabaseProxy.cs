@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,15 +23,35 @@ namespace CarRentaSYS.DataAccessObject
                
         }
 
-        public bool IsAuthorised(int managerID)
+        public DataSet FindCustomerAccountForClosure(int customerID)
         {
-           bool validID = manager.VerifyManagerID(managerID);
+            DataSet dataSet = manager.FindCustomerAccountForClosure(customerID);
 
-           manager.CloseConnection();
+            return dataSet;
 
-           return validID;
-           
-           
         }
+
+        public bool IsAccountOpened(int customerID)
+        {
+            bool customerStatus = manager.IsAccountOpened(customerID);
+
+            manager.CloseConnection();
+
+            return customerStatus;
+        }
+
+        public bool IsAuthorisedManagerID(int managerID)
+        {
+            bool managerIDValidation = manager.VerifyManagerID(managerID);
+
+            manager.CloseConnection();
+
+            return managerIDValidation;
+
+
+        }
+
+        
+  
     }
 }

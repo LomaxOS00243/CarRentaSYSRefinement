@@ -87,7 +87,7 @@ namespace CarRentaSYS
             this.newClientBox1.TabIndex = 1;
             this.newClientBox1.TabStop = false;
             this.newClientBox1.Text = "Enter Client Details";
-            this.newClientBox1.Enter += new System.EventHandler(this.newClientBox1_Enter);
+            this.newClientBox1.Enter += new System.EventHandler(this.NewCustomerBox1_Enter);
             // 
             // addClientBtn
             // 
@@ -100,7 +100,7 @@ namespace CarRentaSYS
             this.addClientBtn.TabIndex = 2;
             this.addClientBtn.Text = "Add";
             this.addClientBtn.UseVisualStyleBackColor = false;
-            this.addClientBtn.Click += new System.EventHandler(this.Button1_Click);
+            this.addClientBtn.Click += new System.EventHandler(this.AddNewAccount_Click);
             // 
             // label14
             // 
@@ -140,7 +140,7 @@ namespace CarRentaSYS
             this.custIDTxt.Name = "custIDTxt";
             this.custIDTxt.Size = new System.Drawing.Size(98, 26);
             this.custIDTxt.TabIndex = 2;
-            this.custIDTxt.TextChanged += new System.EventHandler(this.newTxtBox1_TextChanged);
+            this.custIDTxt.TextChanged += new System.EventHandler(this.NewTxtBox1_TextChanged);
             // 
             // label1
             // 
@@ -209,7 +209,7 @@ namespace CarRentaSYS
             this.custNameTxt.Name = "custNameTxt";
             this.custNameTxt.Size = new System.Drawing.Size(162, 24);
             this.custNameTxt.TabIndex = 0;
-            this.custNameTxt.TextChanged += new System.EventHandler(this.custNameTxt_TextChanged);
+            this.custNameTxt.TextChanged += new System.EventHandler(this.CustomerNameTxt_TextChanged);
             // 
             // label10
             // 
@@ -308,7 +308,7 @@ namespace CarRentaSYS
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(56, 15);
             this.backToolStripMenuItem.Text = "<back";
-            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click_1);
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.BackToMenuBtn_Click_1);
             // 
             // managerLabel
             // 
@@ -321,7 +321,7 @@ namespace CarRentaSYS
             this.managerLabel.Size = new System.Drawing.Size(106, 20);
             this.managerLabel.TabIndex = 14;
             this.managerLabel.Text = "Manager ID: ";
-            this.managerLabel.Click += new System.EventHandler(this.managerLabel_Click);
+            this.managerLabel.Click += new System.EventHandler(this.ManagerIDLabel_Click);
             // 
             // managerIDTxt
             // 

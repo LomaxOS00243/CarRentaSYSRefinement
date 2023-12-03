@@ -104,6 +104,7 @@
     <Compile Include="BusinessLogicLayer\CustomerLogic\CustomerController.cs" />
     <Compile Include="BusinessLogicLayer\CustomerLogic\CountryValidationStrategy.cs" />
     <Compile Include="BusinessLogicLayer\CustomerLogic\EmailValidationStrategy.cs" />
+    <Compile Include="BusinessLogicLayer\CustomerLogic\IDValidationStrategy.cs" />
     <Compile Include="BusinessLogicLayer\CustomerLogic\ManagerIDValidationStrategy.cs" />
     <Compile Include="BusinessLogicLayer\CustomerLogic\NameValidationStrategy.cs" />
     <Compile Include="BusinessLogicLayer\CustomerLogic\TelnoValidationStrategy.cs" />

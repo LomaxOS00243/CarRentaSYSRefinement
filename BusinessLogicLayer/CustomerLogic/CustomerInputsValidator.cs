@@ -13,7 +13,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 
 
         //Return true if the input on FrmAddCustomer is valid. If not, returns false and displays an appropiate error message
-        public bool ValidateField(TextBox inputField, ICustomerValidationStrategy validationStrategy)
+        public bool VerifyEmptyField(TextBox inputField, ICustomerValidationStrategy validationStrategy)
         {
             if(string.IsNullOrWhiteSpace(inputField.Text))
             {
@@ -27,6 +27,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
             }
             return true;
         }
+
 
         //Allow the interaction of various input validation strategies via an interface
         public void CreateValidationStrategy(ICustomerValidationStrategy customerValidationStrategy)
