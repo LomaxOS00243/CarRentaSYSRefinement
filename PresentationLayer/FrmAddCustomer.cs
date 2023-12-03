@@ -55,22 +55,26 @@ namespace CarRentaSYS
 
                                                                       custCountryTxt.Text, custZipTxt.Text, custEmailTxt.Text, custTelTxt.Text,'O');
 
-            
-            //Return true if the manager id is valid
-            bool isValidId = addNewAccount.CreateAccount(Convert.ToInt32(managerIDTxt.Text));
 
+            try
+            {
+                int managerId = Convert.ToInt32(managerIDTxt.Text);
+                bool anAuthorisedID = addNewAccount.CreateAccount(managerId);
+                if(anAuthorisedID)
+                {
+                    ConfirmNewAccountCreation();
+                    ResetInputFields();
+                    return;
+                }
 
-            if (isValidId)
-            {
-                ConfirmNewAccountCreation();
-                ResetInputFields();
-            }
-            else
-            {
                 customerController.DisplayErrorMessage("Unauthorized manager ID", "Authorization Error");
-                
             }
-                
+            catch (FormatException)
+            {
+                customerController.DisplayErrorMessage("Invalid Manager ID format", "Input Error");
+            }
+            
+
 
         }
         public void ConfirmNewAccountCreation()
