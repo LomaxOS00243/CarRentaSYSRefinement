@@ -24,38 +24,6 @@ namespace CarRentaSYS
 
         private void AddNewAccount_Click(object sender, EventArgs e)
         {
-            VeriryInputFieldsWithStrategy();
-
-
-            CustomerController addNewAccount = new CustomerController(Convert.ToInt32(custIDTxt.Text), custNameTxt.Text, custAddTxt.Text,custTownTxt.Text, 
-
-                                                                      custCountryTxt.Text, custZipTxt.Text, custEmailTxt.Text, custTelTxt.Text,'O');
-
-
-            try
-            {
-                int managerId = Convert.ToInt32(managerIDTxt.Text);
-                bool anAuthorisedID = addNewAccount.CreateAccount(managerId);
-                if(anAuthorisedID)
-                {
-                    ConfirmNewAccountCreation();
-                    ResetInputFields();
-                    return;
-                }
-
-                customerController.DisplayErrorMessage("Unauthorized manager ID", "Authorization Error");
-            }
-            catch (FormatException)
-            {
-                customerController.DisplayErrorMessage("Invalid Manager ID format", "Input Error");
-            }
-            
-
-
-        }
-        private void VeriryInputFieldsWithStrategy()
-        {
-            //Application of Strategy Pattern  to check input fields
 
             if (!inputsValidator.VerifyEmptyField(managerIDTxt, new ManagerIDValidationStrategy()))
             { return; }
@@ -78,17 +46,50 @@ namespace CarRentaSYS
             if (!inputsValidator.VerifyEmptyField(custEmailTxt, new EmailValidationStrategy()))
             { return; }
 
-            if (!inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
+            if (inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
             { return; }
+
+            CustomerController addNewAccount = new CustomerController(Convert.ToInt32(custIDTxt.Text), custNameTxt.Text, custAddTxt.Text, custTownTxt.Text,
+
+                                                                      custCountryTxt.Text, custZipTxt.Text, custEmailTxt.Text, custTelTxt.Text, 'O');
+
+
+
+            AddingNewAccount(addNewAccount);
+
+
+
         }
-        public void ConfirmNewAccountCreation()
+        private void AddingNewAccount(CustomerController addAccount)
+        {
+            
+            try
+            {
+                int managerId = Convert.ToInt32(managerIDTxt.Text);
+                bool anAuthorisedID = addAccount.CreateAccount(managerId);
+                if (anAuthorisedID)
+                {
+                    ConfirmNewAccountCreation();
+                    ResetInputFields();
+                    return;
+                }
+
+                customerController.DisplayErrorMessage("Unauthorized manager ID", "Authorization Error");
+            }
+            catch (FormatException)
+            {
+                customerController.DisplayErrorMessage("Invalid Manager ID format", "Input Error");
+            }
+        }
+        
+        private void ConfirmNewAccountCreation()
         {
             customerController.DisplayInformationMessage("Customer " + custIDTxt.Text + " added successfully", "Success");
 
             customerController.DisplayInformationMessage("Customer Account is Created", "Success");
          
         }
-        public void ResetInputFields()
+        private void ResetInputFields()
         {
             custIDTxt.Text = customerController.GetNextCustomerID().ToString("0000");
             custNameTxt.Clear();
