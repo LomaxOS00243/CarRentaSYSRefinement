@@ -11,6 +11,5 @@ namespace CarRentaSYS.DataAccessObject
     {
         void CreateCustomerAccount(string sqlQuery);
         bool IsAccountOpened(int customerID);
-        DataSet FindCustomerAccountForClosure(int customerID);
     }
 }

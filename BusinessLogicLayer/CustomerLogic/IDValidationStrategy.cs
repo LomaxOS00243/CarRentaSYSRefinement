@@ -10,7 +10,6 @@ namespace CarRentaSYS.BusinessLogicLayer.CustomerLogic
 {
     internal class IDValidationStrategy : ICustomerValidationStrategy
     {
-
         public void ReturnResponse()
         {
             MessageBox.Show("Customer ID must be entered!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -23,13 +23,6 @@ namespace CarRentaSYS.DataAccessObject
                
         }
 
-        public DataSet FindCustomerAccountForClosure(int customerID)
-        {
-            DataSet dataSet = manager.FindCustomerAccountForClosure(customerID);
-
-            return dataSet;
-
-        }
 
         public bool IsAccountOpened(int customerID)
         {

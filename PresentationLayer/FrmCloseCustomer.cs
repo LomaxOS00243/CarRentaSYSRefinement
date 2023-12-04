@@ -22,6 +22,7 @@ namespace CarRentaSYS
             InitializeComponent();
         }
 
+        //Search customer account by Id
         private void FindCustomerAccountBtn_Click(object sender, EventArgs e)
         {
             
@@ -84,7 +85,7 @@ namespace CarRentaSYS
         }
 
         
-
+        //Close customer account after retrieval
         private void CloseCustomerAccountBtn_Click(object sender, EventArgs e)
         {
             DialogResult close = customerController.DisplayConfirmationBottons("Would you like to continue?", "Confirmation");

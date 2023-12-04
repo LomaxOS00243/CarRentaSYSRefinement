@@ -127,6 +127,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
             return id;
         }
 
+        //Create a new account via the Proxy
         public bool CreateAccount(int managerID)
         {
 
@@ -141,7 +142,7 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
                 this.telNo + "','" +
                 this.status + "')";
 
-            //Request the authorisation to create an account via the Proxy
+            
             if (GetAuthorisation(managerID))
             {
                 customerDatabaseProxy.CreateCustomerAccount(query);
@@ -160,13 +161,9 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 
         public DataSet FindCustomerAccount(int customerID)
         {
-            return customerDatabaseProxy.FindCustomerAccountForClosure(customerID); 
+            return customerDatabaseManager.FindCustomerAccountForClosure(customerID); 
         }
 
-        public bool GetAuthorisation(int managerID)
-        {
-            return customerDatabaseProxy.IsAuthorisedManagerID(managerID);
-        }
 
         public bool ClosingCustomerAccount(int customerID)
         {
@@ -174,6 +171,13 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
             customerDatabaseManager.CloseConnection();
             return accountClosureResponse;
 
+        }
+
+
+        //Verify manager ID
+        public bool GetAuthorisation(int managerID)
+        {
+            return customerDatabaseProxy.IsAuthorisedManagerID(managerID);
         }
 
         public void DisplayInformationMessage(string message, string title)

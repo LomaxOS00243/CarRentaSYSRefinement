@@ -25,7 +25,7 @@
   <Class Name="CarRentaSYS.DataAccessObject.CustomerDatabaseProxy">
     <Position X="5.75" Y="1.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAACAAAAAAAAAAAEAAAAAAAAAAAIIAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAACAAAAAAAAAAAEAAAAAAAAAAAAIAAAAAA=</HashCode>
       <FileName>DataAccessLayer\CustomerDatabaseProxy.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -44,7 +44,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.EmailValidationStrategy">
-    <Position X="9.25" Y="11.75" Width="1.75" />
+    <Position X="11" Y="11.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\EmailValidationStrategy.cs</FileName>
@@ -52,7 +52,7 @@
     <Lollipop Position="0.1" />
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.AddressValidationStrategy">
-    <Position X="2.25" Y="11.75" Width="1.5" />
+    <Position X="4" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\AddressValidationStrategy.cs</FileName>
@@ -60,7 +60,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.NameValidationStrategy">
-    <Position X="0.5" Y="11.75" Width="1.5" />
+    <Position X="2.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\NameValidationStrategy.cs</FileName>
@@ -79,7 +79,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.CountryValidationStrategy">
-    <Position X="5.75" Y="11.75" Width="1.5" />
+    <Position X="7.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\CountryValidationStrategy.cs</FileName>
@@ -87,7 +87,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.TownValidationStrategy">
-    <Position X="4" Y="11.75" Width="1.5" />
+    <Position X="5.75" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\TownValidationStrategy.cs</FileName>
@@ -95,7 +95,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.ZipcodeValidationStrategy">
-    <Position X="7.5" Y="11.75" Width="1.5" />
+    <Position X="9.25" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\ZipcodeValidationStrategy.cs</FileName>
@@ -103,7 +103,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CarRentaSYS.BusinessLogic.CustomerLogic.TelnoValidationStrategy">
-    <Position X="11.25" Y="11.75" Width="1.5" />
+    <Position X="13" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\TelnoValidationStrategy.cs</FileName>
@@ -111,7 +111,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CarRentaSYS.FrmCloseCustomer" Collapsed="true">
-    <Position X="12.5" Y="9.5" Width="1.5" />
+    <Position X="12.5" Y="9.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AQAAAAAgAOgGBJCCAADEAAEOAAAAIIAAAAAAAJAAAAQ=</HashCode>
       <FileName>PresentationLayer\FrmCloseCustomer.cs</FileName>
@@ -121,8 +121,8 @@
       <Field Name="inputsValidator" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="CarRentaSYS.BusinessLogicLayer.CustomerLogic.IDValidationStrategy" Collapsed="true">
-    <Position X="13.25" Y="11.75" Width="1.75" />
+  <Class Name="CarRentaSYS.BusinessLogicLayer.CustomerLogic.IDValidationStrategy">
+    <Position X="0.5" Y="11.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>BusinessLogicLayer\CustomerLogic\IDValidationStrategy.cs</FileName>
@@ -132,7 +132,7 @@
   <Interface Name="CarRentaSYS.DataAccessObject.ICustomerDatabase">
     <Position X="3.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataAccessLayer\ICustomerDatabase.cs</FileName>
     </TypeIdentifier>
   </Interface>
