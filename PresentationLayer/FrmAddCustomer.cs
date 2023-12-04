@@ -24,31 +24,7 @@ namespace CarRentaSYS
 
         private void AddNewAccount_Click(object sender, EventArgs e)
         {
-            //Application of Strategy Pattern  to check input fields
-
-            if (!inputsValidator.VerifyEmptyField(managerIDTxt, new ManagerIDValidationStrategy()))
-            { return; } 
-
-            if (!inputsValidator.VerifyEmptyField(custNameTxt, new NameValidationStrategy()))
-            { return; }
-
-            if (!inputsValidator.VerifyEmptyField(custAddTxt, new AddressValidationStrategy()))
-            { return; }
-
-            if (!inputsValidator.VerifyEmptyField(custTownTxt, new TownValidationStrategy()))
-            { return; }
-
-            if (!inputsValidator.VerifyEmptyField(custCountryTxt, new CountryValidationStrategy()))
-            { return; }
-
-            if (!inputsValidator.VerifyEmptyField(custZipTxt, new ZipcodeValidationStrategy()))
-            { return; }
-
-            if (!inputsValidator.VerifyEmptyField(custEmailTxt, new EmailValidationStrategy()))
-            { return; }
-
-            if (!inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
-            { return; }
+            VeriryInputFieldsWithStrategy();
 
 
             CustomerController addNewAccount = new CustomerController(Convert.ToInt32(custIDTxt.Text), custNameTxt.Text, custAddTxt.Text,custTownTxt.Text, 
@@ -76,6 +52,34 @@ namespace CarRentaSYS
             
 
 
+        }
+        private void VeriryInputFieldsWithStrategy()
+        {
+            //Application of Strategy Pattern  to check input fields
+
+            if (!inputsValidator.VerifyEmptyField(managerIDTxt, new ManagerIDValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custNameTxt, new NameValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custAddTxt, new AddressValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custTownTxt, new TownValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custCountryTxt, new CountryValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custZipTxt, new ZipcodeValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custEmailTxt, new EmailValidationStrategy()))
+            { return; }
+
+            if (!inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
+            { return; }
         }
         public void ConfirmNewAccountCreation()
         {
