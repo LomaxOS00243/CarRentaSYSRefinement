@@ -1,5 +1,4 @@
-﻿using CarRentaSYS.BusinessLogic.CustomerLogic;
-using CarRentaSYS.BusinessLogicLayer.CustomerLogic;
+﻿using CarRentaSYS.BusinessLogicLayer.CustomerLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,7 +118,7 @@ namespace CarRentaSYS
         private void BackToMenuBtn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            frmMainMnu backForm = new frmMainMnu();
+            FrmMainMnu backForm = new FrmMainMnu();
             backForm.Show();
         }
 

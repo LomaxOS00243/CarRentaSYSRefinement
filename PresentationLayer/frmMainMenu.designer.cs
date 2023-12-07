@@ -1,7 +1,7 @@
 ﻿
 namespace CarRentaSYS
 {
-    partial class frmMainMnu
+    partial class FrmMainMnu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace CarRentaSYS
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMnu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainMnu));
             this.mnuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
             this.nCToolStripMnu = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +70,7 @@ namespace CarRentaSYS
             this.mnuStrip1.Size = new System.Drawing.Size(530, 28);
             this.mnuStrip1.TabIndex = 0;
             this.mnuStrip1.Text = "menuStrip1";
-            this.mnuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.mnuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip1_ItemClicked);
             // 
             // clToolStripMnu
             // 
@@ -81,7 +81,7 @@ namespace CarRentaSYS
             this.clToolStripMnu.Name = "clToolStripMnu";
             this.clToolStripMnu.Size = new System.Drawing.Size(102, 26);
             this.clToolStripMnu.Text = "Customer";
-            this.clToolStripMnu.Click += new System.EventHandler(this.clToolStripMnu_Click);
+            this.clToolStripMnu.Click += new System.EventHandler(this.ClToolStripMnu_Click);
             // 
             // nCToolStripMnu
             // 
@@ -185,7 +185,7 @@ namespace CarRentaSYS
             this.pictureBox1.Size = new System.Drawing.Size(755, 391);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
             // 
             // menuStrip1
             // 
@@ -209,7 +209,7 @@ namespace CarRentaSYS
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
             this.backToolStripMenuItem.Size = new System.Drawing.Size(46, 19);
             this.backToolStripMenuItem.Text = "EXIT";
-            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.BackToolStripMenuItem_Click);
             // 
             // frmMainMnu
             // 
@@ -224,7 +224,7 @@ namespace CarRentaSYS
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMainMnu";
             this.Text = "Car Rental SYS";
-            this.Load += new System.EventHandler(this.frmMainMnu_Load);
+            this.Load += new System.EventHandler(this.FrmMainMnu_Load);
             this.mnuStrip1.ResumeLayout(false);
             this.mnuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

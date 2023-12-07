@@ -1,4 +1,4 @@
-﻿using CarRentaSYS.BusinessLogic.CustomerLogic;
+﻿using CarRentaSYS.BusinessLogicLayer.CustomerLogic;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +46,7 @@ namespace CarRentaSYS
             if (!inputsValidator.VerifyEmptyField(custEmailTxt, new EmailValidationStrategy()))
             { return; }
 
-            if (inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
+            if (!inputsValidator.VerifyEmptyField(custTelTxt, new TelnoValidationStrategy()))
             { return; }
 
             CustomerController addNewAccount = new CustomerController(Convert.ToInt32(custIDTxt.Text), custNameTxt.Text, custAddTxt.Text, custTownTxt.Text,
@@ -56,8 +56,6 @@ namespace CarRentaSYS
 
 
             AddingNewAccount(addNewAccount);
-
-
 
         }
         private void AddingNewAccount(CustomerController addAccount)
@@ -112,7 +110,7 @@ namespace CarRentaSYS
         private void BackToMenuBtn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            frmMainMnu mainMenu = new frmMainMnu();
+            FrmMainMnu mainMenu = new FrmMainMnu();
             mainMenu.Show();
         }
 

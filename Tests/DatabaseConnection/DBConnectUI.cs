@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
-using CarRentaSYS.DataAccessObject;
+using CarRentaSYS.DataAccessLayer;
 
 namespace CarRentaSYS.Presentation
 {

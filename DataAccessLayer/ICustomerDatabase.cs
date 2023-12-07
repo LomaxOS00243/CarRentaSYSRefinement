@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRentaSYS.DataAccessObject
+namespace CarRentaSYS.DataAccessLayer
 {
     internal interface ICustomerDatabase
     {

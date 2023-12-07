@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading.Tasks;
 
-namespace CarRentaSYS.BusinessLogic.CustomerLogic
+namespace CarRentaSYS.BusinessLogicLayer.CustomerLogic
 {
     internal interface ICustomerValidationStrategy
     {

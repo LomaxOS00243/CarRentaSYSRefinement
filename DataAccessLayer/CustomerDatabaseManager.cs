@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 
-namespace CarRentaSYS.DataAccessObject
+namespace CarRentaSYS.DataAccessLayer
 {
     internal class CustomerDatabaseManager : ICustomerDatabase
     {
@@ -33,6 +33,8 @@ namespace CarRentaSYS.DataAccessObject
             return customerCustomer;
    
         }
+
+        //Return the next customer ID number 
         public int GetNextCustomerID()
         {
             int nextCustomerID;
@@ -63,7 +65,7 @@ namespace CarRentaSYS.DataAccessObject
         }
         
         
-
+        //Return true if the Manager ID exist in the database
         public bool VerifyManagerID(int managerID)
         {
             string sqlQuery = "SELECT ManagerID FROM Managers WHERE ManagerID = " + managerID;
@@ -85,7 +87,20 @@ namespace CarRentaSYS.DataAccessObject
 
         }
 
-        
+        public void CreateCustomerAccount(string sqlQuery)
+        {
+
+            OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
+
+            OpenConnection();
+
+            cmd.ExecuteNonQuery();
+
+            CloseConnection();
+
+        }
+
+        //Return true if the account status is O (account is opened)
         public bool IsAccountOpened(int customerID)
         {
             string sqlQuery = "SELECT CustomerID FROM Customers WHERE CustomerID = " + customerID + " AND Status = 'O' ";
@@ -106,19 +121,7 @@ namespace CarRentaSYS.DataAccessObject
             }
         }
 
-        public void CreateCustomerAccount(string sqlQuery)
-        {
-
-            OracleCommand cmd = new OracleCommand(sqlQuery, databaseConnection);
-
-            OpenConnection();
-
-            cmd.ExecuteNonQuery();
-
-            CloseConnection();
-
-        }
-
+        //return the account details
         public DataSet FindCustomerAccountForClosure(int customerID)
         {
             string sqlQuery = "SELECT CustomerID, Name, Address, Town, Country, Zipcode, Email, Telno FROM Customers" +

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CarRentaSYS
 {
-    public partial class frmMainMnu : Form
+    public partial class FrmMainMnu : Form
     {
-        public frmMainMnu()
+        public FrmMainMnu()
         {
             InitializeComponent();
         }
@@ -25,12 +25,12 @@ namespace CarRentaSYS
 
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
+            //No implementation required.
         }
 
-        
+
 
         private void closeClAccToolStripMnu_Click(object sender, EventArgs e)
         {
@@ -39,86 +39,26 @@ namespace CarRentaSYS
             closeClient.Show();
         }
 
-        /*private void printClStatToolStripMnu_Click(object sender, EventArgs e)
-        {
-            /*this.Hide();
-            FrmPrintStatement printStatement = new FrmPrintStatement();
-            printStatement.Show();
-        }
+        
 
-        private void makeResToolStripMnu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmMakeReservation showForm = new frmMakeReservation();
-            showForm.Show();
-        }
-
-        private void cancelResToolStripMnu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmCancelReservation cancelRes = new frmCancelReservation();
-            cancelRes.Show();
-        }
-
-        private void cCarToolStripMnu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmCollectCar frmCollect = new frmCollectCar();
-            frmCollect.Show();
-        }
-
-        private void rCarToolStripMnu_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmReturnCar frmReturn = new frmReturnCar();
-            frmReturn.Show();
-        }
-
-        private void picBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void issueInvoicesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (Invoices.runInvoiceForm())
-            {
-                this.Hide();
-                frmIssueInvoice frmInvoice = new frmIssueInvoice();
-                frmInvoice.Show();
-            }
-            else
-            {
-                MessageBox.Show("The Issue Invoices can only be made on the first day of next month","Message",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-            
-        }*/
-
-        private void backToolStripMenuItem_Click(object sender, EventArgs e)
+        private void BackToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        /*private void yearlyRevenueAnalysisToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PictureBox1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmYearlyRevenue frmYearlyRevenue = new frmYearlyRevenue();
-            frmYearlyRevenue.Show();
-        }*/
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
+            //No implementation required. 
         }
 
-        private void frmMainMnu_Load(object sender, EventArgs e)
+        private void FrmMainMnu_Load(object sender, EventArgs e)
         {
-
+            //No implementation required.
         }
 
-        private void clToolStripMnu_Click(object sender, EventArgs e)
+        private void ClToolStripMnu_Click(object sender, EventArgs e)
         {
-
+            //No implementation required.
         }
     }
 }

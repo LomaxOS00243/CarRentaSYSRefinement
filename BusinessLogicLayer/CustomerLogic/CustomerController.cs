@@ -1,4 +1,4 @@
-﻿using CarRentaSYS.DataAccessObject;
+﻿using CarRentaSYS.DataAccessLayer;
 using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CarRentaSYS.BusinessLogic.CustomerLogic
+namespace CarRentaSYS.BusinessLogicLayer.CustomerLogic
 {
-    internal class CustomerController
+    public class CustomerController
     {
 
         private readonly CustomerDatabaseManager customerDatabaseManager = CustomerDatabaseManager.CustomerDatabaseInstance();
@@ -122,9 +122,8 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
         
         public int GetNextCustomerID()
         { 
-            int id = customerDatabaseManager.GetNextCustomerID();
+            return customerDatabaseManager.GetNextCustomerID();
 
-            return id;
         }
 
         //Create a new account via the Proxy
@@ -152,7 +151,14 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
                 return false;
         }
 
-        
+        //Verify manager ID
+        public bool GetAuthorisation(int managerID)
+        {
+            return customerDatabaseProxy.IsAuthorisedManagerID(managerID);
+        }
+
+
+
         public bool RequestAccountStatus(int customerID)
         { 
             return customerDatabaseProxy.IsAccountOpened(customerID);
@@ -173,12 +179,6 @@ namespace CarRentaSYS.BusinessLogic.CustomerLogic
 
         }
 
-
-        //Verify manager ID
-        public bool GetAuthorisation(int managerID)
-        {
-            return customerDatabaseProxy.IsAuthorisedManagerID(managerID);
-        }
 
         public void DisplayInformationMessage(string message, string title)
         {
