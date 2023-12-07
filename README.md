@@ -1,1 +1,1 @@
-# CRentalSYS: A system that simplifies car rental management
+# CRentalSYS: A system that simplifies car rental process
